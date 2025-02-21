@@ -3,8 +3,24 @@ import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)', '/']);
 
 export default clerkMiddleware(async (auth, request) => {
+  const { userId } = await auth();
+
   if (!isPublicRoute(request)) {
     await auth.protect();
+  }
+
+  // If it's a public route...
+  if (isPublicRoute(request)) {
+    // ...but the user is signed in, redirect them to /select-org
+
+    if (userId) {
+      return new Response(null, {
+        status: 307,
+        headers: { Location: '/select-org' },
+      });
+    }
+    // Otherwise, allow access to the public route
+    return;
   }
 });
 
