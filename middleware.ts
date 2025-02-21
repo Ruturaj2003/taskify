@@ -13,12 +13,6 @@ export default clerkMiddleware(async (auth, request) => {
   if (isPublicRoute(request)) {
     // ...but the user is signed in, redirect them to /select-org
 
-    if (userId) {
-      return new Response(null, {
-        status: 307,
-        headers: { Location: '/select-org' },
-      });
-    }
     // Otherwise, allow access to the public route
     return;
   }
