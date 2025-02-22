@@ -26,7 +26,7 @@ export default clerkMiddleware(async (auth, request) => {
     });
   }
 
-  if (userId && orgId && request.nextUrl.pathname !== '/select-org') {
+  if (userId && !orgId && request.nextUrl.pathname !== '/select-org') {
     const orgSelection = new URL('/select-org', request.url);
 
     return NextResponse.redirect(orgSelection);

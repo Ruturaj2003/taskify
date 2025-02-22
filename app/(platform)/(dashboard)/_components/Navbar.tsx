@@ -12,6 +12,7 @@ export const Navbar = () => {
           <Logo></Logo>
         </div>
         <Button
+          variant={'primary'}
           size={'sm'}
           className="rounded-sm hidden md:block h-uto py-1.5 px-2"
         >
