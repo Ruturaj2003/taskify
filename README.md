@@ -2,6 +2,8 @@
 
 This project, named **Taskify**, is a full-stack Trello clone built as part of a tutorial by **Code with Antonio**. It covers everything from authentication and organization management to board creation, card management, and more. You will also learn to integrate APIs, work with databases, and use modern tools and technologies like Prisma ORM, TailwindCSS, and Stripe.
 
+**NOTE** : It is not an exact replica of the project as I have made some personal changes and some changes were made due to the updating of tools such as clerk
+
 ## Technologies Used:
 
 - **Frontend**: ShadcnUI & TailwindCSS
