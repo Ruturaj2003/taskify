@@ -48,7 +48,19 @@ export const Sidebar = ({ storageKey = 't-sidebar-state' }: SidebarProps) => {
   if (!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading) {
     return (
       <>
-        <Skeleton></Skeleton>
+        <div className="p-4">
+          {/* Header Skeleton */}
+          <div className="flex items-center justify-between mb-2">
+            <Skeleton className="h-6 w-[50%]" />
+            <Skeleton className="h-6 w-6 rounded-full" />
+          </div>
+          {/* List Skeleton */}
+          <div className="space-y-2">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <Skeleton key={index} className="h-8 w-full" />
+            ))}
+          </div>
+        </div>
       </>
     );
   }
