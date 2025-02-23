@@ -13,7 +13,7 @@ const SettingsPage = () => {
               height: '100vh',
             },
             card: {
-              border: '1px solid #e7f8a1',
+              border: '1px solid  #ff9f51',
               boxShadow: 'none',
               width: '100%',
             },
