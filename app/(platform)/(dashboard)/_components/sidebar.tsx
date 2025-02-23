@@ -56,7 +56,7 @@ export const Sidebar = ({ storageKey = 't-sidebar-state' }: SidebarProps) => {
           </div>
           {/* List Skeleton */}
           <div className="space-y-2">
-            {Array.from({ length: 3 }).map((_, index) => (
+            {Array.from({ length: 7 }).map((_, index) => (
               <Skeleton key={index} className="h-8 w-full" />
             ))}
           </div>
