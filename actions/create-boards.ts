@@ -1,6 +1,7 @@
 'use server';
 
 import { db } from '@/lib/db';
+import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 
 const CreateBoard = z.object({
@@ -17,4 +18,6 @@ export async function create(formData: FormData) {
       title,
     },
   });
+
+  revalidatePath('/organization/org_2tOPhnDAcDl18hvxqGe3PhmzDN1');
 }
